@@ -1,10 +1,13 @@
-
-def delitelne_beze_zbytku_3(cislo):
-    return False
-
-    
-if _name'__name__' == "_main_":
-    if delitelne_beze_zbytku_3(3):
-      print("Ano, je dělitelné beze zbytku")
+def sudy_nebo_lichy(cislo)
+    if cislo % 2 == 0:
+        return True
     else:
-       print("Ne, není dělitelné beze zbytku")
+        return False
+    
+
+
+if __name__ == "__main__":
+    if sudy_nebo_lichy(5) == True:
+        print("Je sudé")
+    else:
+        print("Je liché")
