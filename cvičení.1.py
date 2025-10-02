@@ -1,4 +1,6 @@
-def sudy_nebo_lichy(cislo)
+cislo = int(input("Zadej cislo: "))
+
+def sudy_nebo_lichy(cislo):
     if cislo % 2 == 0:
         return True
     else:
