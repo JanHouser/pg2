@@ -7,7 +7,7 @@ def deduplikace_dotazu(dotazy):
         j = i + 1
         while j < len(dotazy):
             jaccard = jaccardova_vzdalenost_mnozin(dotazy[i]["serp"], dotazy[j]["serp"])
-            leve
+            
 
 if __name__ == "__main__":
 
