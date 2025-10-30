@@ -1,1 +1,2 @@
-ahoj
+Alice 25 "student"
+Mirek 54 "pracující"
