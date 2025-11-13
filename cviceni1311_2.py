@@ -1,0 +1,33 @@
+import requests
+import sqlite3
+
+db = sqlite3.connect('sqlite.db')
+
+def download_rates(url):
+    response = requests.get(url , timeout=2)
+
+    if not response.ok:
+        return None
+    
+    rates = {}
+
+    data = response.text
+    data = data.split('\n')
+    date = data[0].split('#')[0].strip()
+
+    for line in data[2:]:
+        fields = line.split('|')
+        if len(fields) < 5:
+            continue
+        multiplicator = int(fields[2])
+        rates[fields[3]] = float(fields[4].replace(',','.')) / multiplicator
+
+    return date, rates
+
+
+
+if __name__ == "__main__":
+
+    datum, listek = download_rates('http://www.cnb.cz/cs/financni_trhy/devizovy_trh/kurzy_devizoveho_trhu/denni_kurz.txt')
+    print (datum)
+    print(listek)
